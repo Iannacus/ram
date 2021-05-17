@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SearchBox from './SearchBox';
 import LocationContainer from './LocationContainer';
+import Spiner from './Spiner';
 
 
 function RickAndMorty() {
@@ -59,10 +60,10 @@ function RickAndMorty() {
                 error={error}
                 setError={setError}
             />
-            {error ? null :
+            {error ? null : locationInfo !== null ?
                 <LocationContainer
                     locationInfo={locationInfo}
-                />
+                /> : <Spiner />
             }
         </>
     )

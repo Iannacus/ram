@@ -19,7 +19,7 @@ function SearchBox({ location, setLocation, handleConsult, handleQuery, error, s
         <header>
             <img className='logo' src="https://help.redbubble.com/hc/article_attachments/360002309526/Rick_and_Morty_-_logo__English_.png" alt="" />
             <div className="searcher">
-                {error ? <p className='custom custom-error'>Debes ingresar una ubicación válida</p> : null}
+                {error ? <p className='custom custom-error'>You must type a valid location</p> : null}
                 <form onSubmit={handleSubmit} >
                     <input className='searcher__input custom' type="text" name='search'
                         onChange={e => handleLocation(e.target.value)}
