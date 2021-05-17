@@ -1,38 +1,186 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+html {
+    box-sizing: border-box;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  *,*:after, *:berore {
+    box-sizing: inherit;
   }
-  to {
-    transform: rotate(360deg);
+  
+  body {
+    margin: 0;
+    font-family: 'Creepster', cursive;
   }
-}
+  
+  h5 {
+    font-size: 16px;
+  }
+  
+  header {
+    text-align: center;
+    background-image: url('https://rickandmortypod.com/wp-content/uploads/2018/11/cropped-RM_page-header_background1-3.png');
+    background-position: bottom center;
+    padding: 30px 0;
+  }
+  
+  .custom {
+    color: #00b0c7;
+    font-family: 'Creepster', cursive;
+    font-size: 28px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #c4db50;
+    text-shadow: 0 0 7px #c4db50;
+  }
+
+  .custom-error {
+    font-size: 24px;
+    padding: 10px 5px;
+    border: 2px solid #e42c2c;
+    border-radius: 7px;
+    background: rgba(251, 113, 113, 0.5);
+    color: #FFF;
+    -webkit-text-stroke-color: #e42c2c;
+    text-shadow: 0 0 7px #ec4242;
+  }
+  
+  .logo {
+    margin: 30px 10px 0 10px;
+    max-width: 100%;
+  }
+  
+  .searcher {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+  
+  .searcher__input {
+    width: 92%;
+    background-color: rgba(0,0,0, 0.5);
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    margin-bottom: 10px;
+  }
+  
+  .searcher__input:hover {
+    border: 2px solid #00b0c7;
+  }
+  
+  .searcher__button{
+    font-family: 'Creepster', cursive;
+    font-size: 24px;
+    width: 100%;
+    background-color: #00b0c7;
+    border-radius: 7px;
+    padding: 15px;
+    border: none;
+    Color: white;
+  }
+  
+  main {
+    background-color: #444;
+  }
+  
+  .container {
+    margin: 0 auto;
+    max-width: 1200px;
+    
+  }
+  
+  .location__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 16px;
+  }
+  
+  @media (min-width: 768px){
+    .location__info {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  }
+  
+  .location__character {
+    display: grid; 
+    grid-template-columns: repeat(1, 1fr);
+    gap:  10px;
+    margin: 15px;
+  }
+  
+  @media (min-width: 500px){
+    .location__character {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .location__character {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .character {
+    color: white;
+    background-color: rgba(0,0,0, 0.7);
+    border: 4px solid #c4db50;
+    border-radius: 7px;
+    box-shadow:0px 0px 7px 5px rgba(196, 219, 80, 0.3);
+  }
+  
+  .character__info {
+    background-color: #c4db50;
+    position: relative;
+  }
+  
+  .character__info img {
+    width: 100%;
+
+
+  }
+  
+  .character__info-layout {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  .character__info-flex{
+    display: flex;
+    justify-content: center;
+  }
+  h5 {
+    margin : 10px;
+    text-align: center;
+  }
+
+  .spiner {
+    margin: 0 auto;
+    border: 4px solid rgba( 255,255,255,.3);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: transparent;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  }
