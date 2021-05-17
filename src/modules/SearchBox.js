@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function SearchBox({ location, setLocation, handleConsult, handleQuery }) {
+function SearchBox({ location, setLocation, handleConsult, handleQuery, error, setError }) {
 
-    const [error, setError] = useState(false);
-
+    //Levantamos estado con el texto del input
     const handleLocation = (e) => {
         setLocation(e);
     };
 
     const handleSubmit = e => {
         e.preventDefault();
-        //validar 
+        //validar que el text input contenga información
         location.trim() === '' ? setError(true) : setError(false);
-        //pasar al componente principal 
+        //pasar al componente principal     
         handleConsult(true);
     }
 

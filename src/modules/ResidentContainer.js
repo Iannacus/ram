@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import ResidentInfo from './ResidentInfo'
 
-function ResidentContainer({ residents }) {
+function ResidentContainer({ residents, pageNumber }) {
 
     const [residentArray, setResidentArray] = useState([]);
+    const [hasResidents, setHasResidents] = useState(false);
+    //Valores de inicio y fin para el metodo slice y seleccionar dentro del arreglo los 
+    //personajes correspendientes a cada página
+    let start = ((pageNumber - 1) * 9);
+    const end = start + 9;
 
+    //Se verifica que el arreglo tenga al menos un residente y se corta dependiendo de la página seleccionada 
     useEffect(() => {
         if (residents.length > 0) {
-            setResidentArray(residents.slice(0, 10));
+            setHasResidents(false);
+            setResidentArray(residents.slice(start, end));
+        } else {
+            setHasResidents(true);
         }
-    }, [residents])
-
+    }, [residents, end, start])
+    //Se crea la lista de residentes para mostrar en pantalla
     const list = residentArray.map(resident => {
         return (<ResidentInfo
             key={resident}
@@ -22,7 +31,8 @@ function ResidentContainer({ residents }) {
 
     return (
         <div className='location__character'>
-            {list}
+            {hasResidents ? <div className='empty-character custom'> <p> It seems that there are no residents in this place. </p></div> : list}
+
         </div>
     );
 }

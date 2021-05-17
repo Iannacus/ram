@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
+
 function ResidentInfo({ url }) {
     const [residentInfo, setResidentInfo] = useState(null);
     const [characteName, setCharacterName] = useState('');
@@ -8,6 +9,7 @@ function ResidentInfo({ url }) {
     const [episodes, setEpisodes] = useState(0);
     const [imgURL, setImgURL] = useState('');
 
+    //se obtiene la información del personaje. 
     useEffect(() => {
         if (url !== '') {
             fetch(url)
@@ -15,7 +17,7 @@ function ResidentInfo({ url }) {
                 .then(data => setResidentInfo(data));
         }
     }, [url]);
-
+    // Se asignan los valores en cuanto se tiene la información del personaje. 
     useEffect(() => {
         if (residentInfo !== null) {
             setCharacterName(residentInfo.name);
