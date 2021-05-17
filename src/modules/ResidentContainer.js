@@ -31,7 +31,7 @@ function ResidentContainer({ residents, pageNumber }) {
 
     return (
         <div className='location__character'>
-            {hasResidents ? <div className='empty-character custom'> <p> Seems that there are no residents at this place. </p></div> : list}
+            {hasResidents ? <div className='empty-character custom'> <p> Seems there are no residents at this place. </p></div> : list}
 
         </div>
     );
